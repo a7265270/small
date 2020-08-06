@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-combined-tabs": "/miniprogram_npm/lin-ui/combined-tabs/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index"
+  }
+}

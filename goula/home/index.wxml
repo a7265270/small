@@ -1,0 +1,38 @@
+<wxs module="com" src="../../xiaohei/wxs/common.wxs"/>
+<view class="menu-container" >
+  <view class='homeTop'>
+    <view class='headerSearch'>
+    <view class="search left" bind:tap="toPage" data-url="/goula/ohter/store/detail/index">
+      <input placeholder="当前门店:丽发新城店" disabled ></input>
+      <l-icon name="address" color="#999"/>
+    </view>
+    <view class="search right"  bind:tap="toPage" data-url="/goula/ohter/common/search/index">
+      <input placeholder="{{search_keywords||'搜索商品'}}" disabled ></input>
+      <l-icon name="research" color="#999"/>
+    </view>
+    </view>
+    <l-notice-bar style="margin-bottom:20rpx" type="roll" front-icon-name="notification" speed="850">3公里配送到家！产品满68元即可免配送费！</l-notice-bar>
+    <view class="homeTopCont">
+      <!--描述：图片轮播开始-->
+      <view class='new-swiper'>
+        <swiper class="swiper" indicator-dots="true" indicator-color="#fff" indicator-active-color="#21d4fd"  autoplay="true" interval="5000" duration="500">  
+          <block wx:for="{{swiper}}" wx:for-index="index">  
+            <swiper-item>  
+              <image src="{{com.imgpath(item.imageUrl,'local')}}" class="slide-image" mode="aspectFill" bind:tap="toPage" data-url="{{item.linkMinp}}"/>
+            </swiper-item>  
+          </block>  
+        </swiper>
+      </view>
+      <!--描述：图片轮播结束-->
+  </view>
+   <!--商品去-->
+   </view>
+  <block wx:for="{{goodList}}" wx:key>
+    <s-spu-scroll
+            title="{{item.title}}"
+            spu-list="{{item.list}}"
+            listType="{{item.type}}"
+            >
+      </s-spu-scroll>
+  </block>
+</view>

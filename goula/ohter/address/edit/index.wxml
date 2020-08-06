@@ -1,0 +1,43 @@
+<form bindsubmit="toCommit">
+	<view class='addressBox'>
+		<view class="new-infor">
+			<view class="new-infor-one">
+				<view class="new-inforOne-left">收货人</view>
+				<view class="new-inforOne-right">
+					<input type="text" placeholder="请填写收货人" name="name" value="{{name}}" />
+				</view>
+			</view>
+			<view class="new-infor-one">
+				<view class="new-inforOne-left">联系电话</view>
+				<view class="new-inforOne-right">
+					<input type="number" placeholder="请填写联系电话" name="phone" value="{{phone}}" maxlength="11"/>
+					<button bind:tap="toBind">使用绑定手机号</button>
+				</view>
+			</view>
+			<view class="new-infor-one" bind:tap="toPage" data-url="../select/index">
+				<view class="new-inforOne-left">选择位置</view>
+				<view class="new-inforOne-right">
+					<input placeholder="请在地图上选择地址" disabled name="selectAddress" value="{{selectAddress}}" />
+					<icon class="icon-right" />
+				</view>
+			</view>
+			<view class="new-infor-one">
+				<view class="new-inforOne-left">详细地址</view>
+				<view class="new-inforOne-right">
+					<textarea name="detail" value="{{detail}}" placeholder="街道门牌信息" />
+					</view>
+		</view>
+		<view class="new-infor-one">
+			<view class="new-inforOne-left">是否默认</view>
+			<view class="new-inforOne-checked">
+      <checkbox-group bindchange="toChange">
+				<checkbox  checked='{{is_defalut==1}}' />
+      </checkbox-group>
+			</view>
+		</view>
+		<view class="commonBtn">
+			<button form-type="submit">保存</button>
+		</view>
+	</view>
+</view>
+</form>

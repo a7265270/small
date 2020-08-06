@@ -1,0 +1,33 @@
+
+<view class="section mapSearch">
+    <input bindinput="bindInput" placeholder="搜索" value="{{addValue}}"/>
+    <view class='search-delete' bind:tap="toClear">×</view>
+</view>
+<cover-view scroll-y="ture" class='mapSearchBox' hidden="{{tips.length==0}}">
+    <cover-view bind:tap="bindSearch" data-record="{{i}}" class="text_box" wx:for="{{tips}}" wx:for-item="i">
+        {{i.name}}</cover-view>
+</cover-view>
+<view class='store-map' wx:if="{{!isShow}}">
+    <view class="map">
+        <map id="map" longitude="{{lng}}" latitude="{{lat}}" show-compass="true" show-location="true" scale="{{scale}}"
+            controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindregionchange="regionchange"
+            style="width:100%;height:100%;">
+            <cover-image class="cover-image" bindtap="my_location" src="/images/map.png" />
+        </map>
+    </view>
+</view>
+<cover-view class="getLocation" hover-class="getLocationActive" bind:tap="_getLocation"><cover-image class="cover-image2" bindtap="my_location" src="/images/location.png" /></cover-view>
+<view class="store-map-wrap">
+    <view class="store-detail-address-box">
+        <view class="no-store">
+            当前位置：{{selectAdd.regeocodeData.formatted_address}}
+        </view>
+        <!-- </block> -->
+    </view>
+    <view class="mapBtn" bind:tap="toSelect">
+        <button>确定位置</button>
+    </view>
+</view>
+
+
+<h-dialog />

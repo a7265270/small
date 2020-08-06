@@ -1,0 +1,81 @@
+<wxs module="com" src="../../../../xiaohei/wxs/common.wxs" />
+<view class='orderDetail'>
+	<!--订单状态-->
+	<view class='orderDetailState'>
+		<text>{{status_detail}}</text>
+	</view>
+	<!--订单状态-->
+
+	<!--收货地址开始-->
+	<view class='orderAddressed'>
+		<view class='orderAddressIcon'>
+			<icon class='icon-locationfill'></icon>
+		</view>
+		<view class='orderAddressText'>
+			<view class='receivingPers'><text>{{address_info.name}}</text><text>{{address_info.phone}}</text></view>
+			<view class='receivingAddress'>{{address_info.province+address_info.city+address_info.district+address_info.detail}}</view>
+		</view>
+	</view>
+	<!--订单开始-->
+	<view class='orderAll'>
+		<view class="orderList">
+			<view class="goodGroup" wx:for="{{items}}" wx:key bind:tap="toPage" data-url="/goula/ohter/goods/detail/index?goodId={{item.good_id}}">
+				<view class="goodGroupImg">
+					<image mode='aspectFill' src="{{com.imgpath(item.good_img)}}"></image>
+				</view>
+				<view class="goodGroupRh">
+					<view class='h4'>{{item.good_name}}</view>
+					<!-- <view class='p'><text>规格：{{item.goodsLabel}}</text></view> -->
+					<view class="goodsettlementBot">
+						<view class='goodGroupPrice'><label>￥</label><text>{{item.price}}</text></view>
+						<view class="shopcartNumber">
+							<text>×{{item.total}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--要货单订单结束-->
+
+	<!--备注信息开始-->
+	<view class="orderpay-info">
+		<view class='record-info-p' >
+			订单编号
+			<button bind:tap="toCopy" data-value="{{order_no}}">复制</button>
+			<text>{{order_no}}</text>
+		</view>
+
+		<!-- <view class='record-info-p' >
+			商品总价
+			<text>￥{{total_price}}</text>
+		</view> -->
+
+		<view class='record-info-p' >
+			支付金额
+			<text>￥{{final_total_price}}</text>
+		</view>
+
+		<view class='record-info-p' >
+			下单时间
+			<text>￥{{create_time}}</text>
+		</view>
+	</view>
+	<!--备注信息结束-->
+
+	<view class="orderDetailService">
+		<view class="orderDetailServiceItem"><button open-type="contact"><label class="icon-mark"></label><text>联系客服</text></button></view>
+		<view class="orderDetailServiceItem">
+			<h-wx type="call" phone="4001848988">
+				<button><label class="icon-phone"></label><text>拨打电话</text></button>
+			</h-wx>
+		</view>
+	</view>
+
+	<view class="orderDetailBtn">
+      <button class="order-btn-gray" bind:tap="doActive" data-type="cancel" wx:if="{{status=='1'}}">取消订单</button>  
+    	<button class="order-btn-org" bind:tap="doActive" data-type="pay" wx:if="{{status=='1'}}">立即支付</button>
+      <button class="order-btn-org" bind:tap="doActive" data-type="commit" wx:if="{{status=='20'}}">确认收货</button>  
+	</view>
+</view>
+

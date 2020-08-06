@@ -1,0 +1,7 @@
+    <view class="content" >
+      <view class="des">
+        <text class='des-txt'>{{data.title}}</text>
+        <text class='time'>{{data.time}}</text>
+      </view>
+      <image src="{{data.image}}" class="img"></image>
+    </view>

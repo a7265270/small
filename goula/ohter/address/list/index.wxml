@@ -1,0 +1,39 @@
+
+
+
+
+<view class='address-wrap' wx:if="{{list.length>0}}">
+	<view class="addressTips">操作提示：向左滑动可编辑、删除地址</view>
+	<view class='addressList'>
+		<block wx:for="{{list}}" wx:key>
+			<l-slide-view height="200" width="750" slide-width="340"  auto-close close="{{close}}">
+  <view slot="left" class="left">
+    	<view class='addressItem' catch:tap="toSelect" data-record="{{item}}">
+					<view class='address-info'>
+						<view class='address-info-row'>
+							<text>{{item.name}}</text><text class="balance-iphone">{{item.phone}}</text>
+							<label wx:if="{{item.is_defalut===1}}">默认</label>
+						</view>
+						<view class='address-info-row'>{{item.province+item.city+item.district+item.detail}}</view>
+					</view>
+				</view>
+  </view>
+  <view slot="right" class="right">
+    <text class="like" catch:tap="toPage" data-url="../edit/index?id={{item.id}}">编辑</text>
+    <text class="del" catch:tap="_delte" data-id="{{item.id}}">删除</text>
+  </view>
+</l-slide-view>
+		</block>
+	</view>
+</view>
+<!--描述：地址无内容提示-->
+<view class="shopcart-none" wx:else>
+	<view class='p'>
+		<image src="http://jingxi-pro.oss-cn-shenzhen.aliyuncs.com/static/v2/img/address-none.png" mode="widthFix"></image>
+	</view>
+	<view class='p'>还没添加收货地址~</view>
+</view>
+<!--描述：地址无内容提示-->
+<view class="commonBtn report-btn">
+	<button bind:tap="toPage" data-url="../edit/index"><b>＋</b>新增地址</button>
+</view>

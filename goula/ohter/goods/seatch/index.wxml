@@ -1,0 +1,4 @@
+
+
+<h-list  list="{{list}}" noData="{{noData}}" searchData="{{searchData}}" generic:h-list-content="good" pageData="{{pageData}}" loadData="{{loadData}}">
+</h-list>

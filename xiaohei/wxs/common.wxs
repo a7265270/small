@@ -1,0 +1,13 @@
+// var localhost = "http://localhost:5000/assets/"
+var localhost = "http://47.100.200.167:5000/assets/"
+var imgpath = function (url,type) {
+  if(type=='local'){
+    return url;
+  }
+  return localhost+url;
+};
+
+
+module.exports = {
+	imgpath: imgpath,
+};

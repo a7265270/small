@@ -1,0 +1,90 @@
+
+/*地址*/
+.record-address{background:#fff url(http://blueriver.oss-cn-shenzhen.aliyuncs.com/img/address-bg.png) bottom center; width:100%; height:172rpx; background-size:cover; overflow: hidden;}
+.record-address .p{padding:8rpx 0 0 0; font-size:26rpx; color:#999;}
+.record-details-address{float:left; width:88%; font-size:24rpx; padding:24rpx 0 0rpx 24rpx;}
+.record-details-address .p text.balance-iphone{margin-left:10px;}
+.record-details-address .p:first-child{color:#000; font-size:28rpx;}
+.address-direction{float:right; margin-right:24rpx; margin-top:56rpx;}
+.address-direction icon{width:32rpx; height:32rpx; background-size:32rpx 32rpx;}
+.none-address{text-align:center; font-size:28rpx; color:#666; line-height:120rpx;}
+.new-infor{margin:0; border-radius:10rpx; }
+.new-inforOne-right input{font-size:28rpx; height:76rpx; line-height:76rpx;}
+.new-infor-one{background:#fff; display:flex; align-items:center; font-size:28rpx; padding:14rpx 20rpx; line-height:76rpx; border-top:1rpx #ddd solid;}
+.new-infor-one:first-child{border:0;}
+.new-inforOne-left{width:25%; color:#000;}
+.new-inforOne-right{width:75%; display:flex; justify-content:space-between; position:relative; color:#000;}
+.new-inforOne-right button{position:absolute; text-align:right; padding:0; line-height:76rpx; color:#7b69fe; right:0; bottom:0; font-size:24rpx; background:transparent; }
+.new-inforOne-right picker{width:90%;}
+.textRh{text-align:right;}
+.new-inforOne-right icon{display:inline-block;  color:#666; vertical-align:top;}
+.new-inforOne-checked{width:75%; text-align:right;}
+.new-inforOne-right textarea{height:100rpx; line-height:48rpx;}
+.new-infor-number{background:#fff; text-align:center; text-align:center; font-size:26rpx; padding:28rpx 90rpx; border-top:1rpx #eee solid;}
+.new-infor-number label{color:#666; padding-right:10rpx;}
+.address-wrap{padding-bottom:120rpx;}
+.addressTips{background:#fff6e2; padding:20rpx 24rpx; font-size:24rpx; color:#fe4f4f;}
+.addressList{margin:0; border-radius:10rpx; overflow:hidden;}
+.addressItem{background:#fff; margin-bottom: 20rpx; border-top:1rpx #ddd solid; padding:20rpx 24rpx; font-size:26rpx; color:#666;}
+.addressItem:first-child{border:0;}
+.address-checked{float:left; line-height:100rpx;}
+.address-checked radio{transform:scale(0.8);}
+.address-edit{float:right; text-align:right; width:70rpx; height:100rpx;}
+.address-edit navigator{display:block; height:100%;}
+.address-info-row{padding:8rpx 0; display:flex; align-items:center;}
+.address-info-row text{color:#000; font-size:30rpx; padding-right:20rpx;}
+.address-info-row label{background:#7b69fe; font-size:20rpx; height:24rpx; line-height:24.8rpx; color:#fff; padding:0rpx 10rpx; border-radius:2rpx; display:inline-block;}
+.adit{background:url(http://blueriver.oss-cn-shenzhen.aliyuncs.com/img/edit.png); width:32rpx; height:32rpx; background-size:32rpx 32rpx; margin-top:40rpx; display:inline-block;}
+.report-btn{position:fixed; left:0; right:0;  bottom:0;}
+
+
+/*无内容提示*/
+.shopcart-none{text-align:center; left:0; font-size:26rpx; color: #999; width:100%; position: absolute; top:50%; margin-top:-120rpx;}
+.shopcart-none view{padding:10rpx 0;}
+.shopcart-none view image{width:150rpx;}
+.hint-none-btn{background-color:#7b69fe; font-size:28rpx; width:280rpx; height:76rpx; color: #fff; border: 0; border-radius:40rpx;}
+.none-infor{position:absolute; width:100%; top:350rpx; text-align:center; color:#b8b8b8; font-size:30rpx;}
+.none-infor view image{width:180rpx; display:block; margin:0 auto 28rpx auto;}
+
+
+.commonBtn{overflow:hidden; padding:24rpx 150rpx;}
+.commonBtn button{color:#fff; border-radius:40rpx; background:linear-gradient(to right, #ec6958, #d81e06);  box-shadow:0 2rpx 10rpx rgba(111,131,255,0.2); font-size:28rpx; border:0; width:100%; height:76rpx; line-height:50rpx; margin:0;}
+.commonBtn button.disabled{background:#e6e6e6;  box-shadow:0 2rpx 10rpx rgba(0,0,0,0.05);}
+button.button-hover{
+  animation:fade 0.5s;
+  -moz-animation:fade 0.5s; /* Firefox */
+  -webkit-animation:fade 0.5s; /* Safari and Chrome */
+  -o-animation:fade 0.5s; /* Opera */
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  }
+	@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+
+.right {
+  height: 200rpx;
+  display: flex;
+  direction: row;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: space-around;
+  line-height: 200rpx;
+  background: rgba(54, 131, 214, 1);
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.like{
+  background: #9AB2FF;
+  width: 50%
+}
+
+
+.del{
+  background: #F4516C;
+  width: 50%  
+}

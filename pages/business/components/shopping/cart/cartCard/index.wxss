@@ -1,0 +1,33 @@
+.card {
+  margin: 10rpx auto !important;
+}
+
+.right-card {
+  height: 180rpx !important;
+  width: 180rpx !important;
+  border-radius: 12rpx !important;
+}
+
+.content {
+  margin-top: 10rpx;
+  color: #666;
+  font-size: 26rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-top{
+  flex:1;
+  height: initial;
+}
+.card-bottom{
+  margin-top:10rpx;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-title{
+  font-size:26rpx;
+  font-weight: bold;
+}

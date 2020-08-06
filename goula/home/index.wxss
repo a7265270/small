@@ -1,0 +1,46 @@
+.homeTop{ min-height:480rpx; background-size:100% auto;}
+.homeTopCont{background:#fff; margin:0 24rpx; border-radius:12rpx; box-shadow:0 3rpx 20rpx rgba(114, 107, 167, 0.2);}
+.headerSearch{position:relative; padding:10rpx 24rpx 20rpx 24rpx; background:#d81e06;display: flex;}
+.search{
+  position:relative;
+}
+.left {
+  flex:1
+}
+
+.right {
+  margin-left:10rpx;
+  width:300rpx;
+}
+.search input{background:rgba(235, 226, 226, 0.9); height:64rpx; font-size:26rpx; padding:0 20rpx 0 64rpx; border-radius:40rpx;}
+.search l-icon{position:absolute; left:18rpx; top:4rpx; bottom:0; font-size:32rpx; color:#999;}
+.new-swiper{border-radius:0; margin-bottom:0rpx; position:relative;}
+.new-swiper .swiper{background:transparent; position:relative; z-index:9; height:420rpx;}
+.swiper image{height:100%; width:100%; border-radius:12rpx; display:block;}
+.naviBar{padding:0 10rpx; flex-wrap:wrap; display:flex; justify-content:space-between; align-items:center; font-size:24rpx;}
+.naviBarItem{min-width:20%; padding:24rpx 0;}
+.naviBarItem icon{display:block; background:#f9f9f9; margin:0 auto; width:100rpx; height:100rpx; overflow:hidden;}
+.naviBarItem icon image{width:100rpx; height:100rpx; display:block; margin:0 auto;}
+.naviBarItem text{display:block; color:#333; text-align:center; padding-top:6rpx;}
+
+.inviteBanner{margin:24rpx; border-radius:10rpx; overflow:hidden; }
+.inviteBanner image{width:100%; display:block;}
+.homeGoodWrap{margin:24rpx;}
+.homeGoodTab{background:-webkit-linear-gradient(top left, #d81e06, #d81e06); display:flex; align-items:center; border-radius:10rpx;}
+.homeGoodTabItem{flex:1; text-align:center; color:#fff; line-height:30rpx; padding:10rpx 0; font-size:26rpx; position:relative;}
+.homeGoodTabItem::after{content:""; position:absolute; right:0; width:2rpx; background:#fff; top:12rpx; bottom:12rpx;}
+.homeGoodTabItem:last-child::after{content:""; position:absolute; width:0;}
+.homeGoodTabItem text{display:block;}
+.homeGoodTabItem.active{background:linear-gradient(to right, #d81e06, #d81e06); border-radius:10rpx;}
+.homeGoodTabItem.active::after{content:""; position:absolute; width:0;}
+.homeGoodRowItem{background:#fff; padding:24rpx; margin:16rpx 0 ; border-radius:12rpx; box-shadow:0 5rpx 8rpx rgba(114, 107, 167, 0.15); display:flex; align-items:center;}
+.homeGoodRowImg{width:160rpx; height:160rpx; border-radius:10rpx; overflow:hidden;}
+.homeGoodRowImg image{width:160rpx; height:160rpx; display:block;}
+.homeGoodRowInfo{width:calc(100% - 180rpx); margin-left:20rpx;}
+.homeGoodRowInfo .name{font-size:30rpx; line-height:40rpx; height:80rpx; margin-bottom:28rpx; display:-webkit-box; overflow:hidden; text-overflow:ellipsis; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.homeGoodRowInfo .name label{background:linear-gradient(to right, #d81e06, #d81e06); margin-right:10rpx; display:inline-block; height:30rpx; line-height:30rpx; padding:0 4rpx; border-radius:4rpx; color:#fff;}
+.homeGoodRowInfo .price{display:flex; justify-content:space-between; align-items:center; color:#ff5d5d;}
+.homeGoodRowInfo .price text{font-size:32rpx; font-weight:500;}
+.homeGoodRowInfo .price button{background:#ff5d5d; display:flex; align-items:center; justify-content:center; font-size:22rpx; margin:0; color:#fff; min-width:44rpx; line-height:44rpx; padding:0 10rpx; border-radius:40rpx;}
+.homeGoodRowInfo .price button text{font-weight:bold; font-size:24rpx;}
+.buyBtnIcon{background:url(http://jingxi-pro.oss-cn-shenzhen.aliyuncs.com/mall/static/images2/buyBtn.png); width:152rpx; height:38rpx; background-size:152rpx 38rpx;}

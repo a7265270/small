@@ -1,0 +1,156 @@
+<wxs module="com" src="../../../../xiaohei/wxs/common.wxs" />
+<form bindsubmit="toCommit">
+<view class='goodDetail'>
+  <!--收货信息开始-->
+  <view class="orderDetailAddress" wx:if="{{addressInfo}}" bind:tap="_chooseAdress">
+    <view class="orderAddressIcon"><icon class="icon-locationfill"></icon></view>
+    <view class="orderAddress">
+      <view class="addressUser"><text>{{addressInfo.name}}</text><text>{{addressInfo.phone}}</text></view>
+      <view class="receivingAddress">{{addressInfo.province+addressInfo.city+addressInfo.district+addressInfo.detail}}</view>
+    </view>
+    <view class="orderAddressR"><icon class="icon-right"></icon></view>
+  </view>
+  <view class="orderDetailAddress" wx:else bind:tap="_chooseAdress">
+      <view class="addAddress"><label class='icon-add'></label><text>新增收货地址</text></view>
+      <view class="orderAddressR"><icon class="icon-right"></icon></view>
+  </view>
+  <!--收货信息结束-->	
+
+  <!--商品信息开始-->	
+  <view class="blanceStore">
+    <view class="orderGoodList">
+      <block wx:if="{{cartList}}">
+      <view class="goodGroup" wx:for="{{cartList}}" wx:key>
+        <view class="goodGroupImg"><image mode='aspectFill' src="{{com.imgpath(item.goods_img)}}"></image></view>
+        <view class="goodGroupRh">
+          <view class='h4'>{{item.goods_title}}</view>
+          <view class="goodsettlementBot">
+            <view class='goodGroupPrice'><label>￥</label><text>{{item.goods_price}}</text></view>
+              <view class="shopcartNumber" >
+                x<input type="number" value="{{item.quantity}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      </block>
+       <block wx:if="{{goodList}}">
+      <view class="goodGroup" wx:for="{{goodList}}" wx:key>
+        <view class="goodGroupImg"><image mode='aspectFill' src="{{com.imgpath(item.img)}}"></image></view>
+        <view class="goodGroupRh">
+          <view class='h4'>{{item.title}}</view>
+          <view class="goodsettlementBot">
+            <view class='goodGroupPrice'><label>￥</label><text>{{item.discount_price||item.price}}</text></view>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+  </view>
+  <!--商品信息结束-->	
+
+  <!--订单金额开始-->
+  <view class="blanceMoney" wx:if="{{goodList}}">
+    <view class="blanceMoneyItem">
+      <text>购买数量</text>
+      <view class="shopcartNumber">
+         <l-counter  
+              bind:lintap="numberChange"
+              count="{{goodNum}}"
+              min="1"
+              max="30"
+              />
+      </view>
+    </view>
+    <view class="blanceMoneyItem" bind:tap="toShowCoupon" hidden>
+      <text>{{coupon?'已选':''}}优惠券</text>
+        <view wx:if="{{coupon}}" style="color:red;font-weight:bold;">{{coupon.coupon.couponName}}</view>
+        <view style="color:#666;" wx:else>{{coupons.available.length>0?'有'+coupons.available.length+'张可用':'无可用'}}<icon class="icon-right"/></view>
+    </view>
+  </view>
+  <!--订单金额结束-->
+
+  <!--填写备注信息开始-->
+  <view class="blanceInfo">
+    <view><text>买家留言</text><input placeholder="选填,填写订单备注" name="remark"/></view>
+  </view>
+  <!--填写备注信息结束-->
+
+  <!--商品金额计算开始-->
+  <view class="blanceMoney" wx:if="{{itemList.length>1}}">
+    <view class="blanceMoneyItem" wx:for="{{itemList}}" wx:key>
+    <text>{{item.title}}</text>
+    <text style="{{index>0?'color:red;font-weight:bold':''}}">￥{{item.value}}</text></view>
+  </view>
+  <!--商品金额计算结束-->
+
+  <!--描述：确认兑换操作开始-->
+		<view class="blanceFooter">
+			<view class="shopcartMoney">
+				<label>实付金额:</label><text>￥{{payTotalMoney}}</text>
+			</view>
+			<view class="shopcartBlance">
+				<button form-type="submit">立即支付</button>
+			</view>
+		</view>
+		<!--描述：确认兑换操作结束-->
+</view>
+</form>
+
+<!--优惠券领取开始-->
+<view class="couponGetDialog {{selectCoupon?'show':''}}">
+  <view class="mask" bind:tap="toHideCoupn"></view>
+  <view class="couponGet">
+    <view class="couponGetTitle">
+      <text>优惠券</text>
+      <icon class="icon-close" bind:tap="toHideCoupn"></icon>
+    </view>
+    <view class="getCouponTab">
+      <view class="getCouponTabItem {{coupnType==1?'active':''}}" bind:tap="toSelectType" data-type="1">可用优惠券({{coupons.available.length}})</view>
+      <view class="getCouponTabItem {{coupnType==2?'active':''}}" bind:tap="toSelectType" data-type="2">不可用优惠券({{coupons.unavailable.length}})</view>
+    </view>
+    <view class="couponGetList">
+      <block wx:if="{{coupnType==1}}">
+      <checkbox-group>
+        <view class='couponGetItem' wx:for="{{coupons.available}}" wx:key="id" bind:tap="toSelectCoupn" data-id="{{item.couponRecordId}}">
+          <view class="couponItemLf">
+            <view class="h4"><label>￥</label><text>{{item.useValue}}</text></view>
+            <view class="h6">满{{item.limitValue}}可用</view>
+          </view>
+          <view class="couponItemRh">
+            <view class='h4'>{{item.coupon.couponName}}</view>
+            <view class='text'>
+              <text>{{item.validBeginTimeDesc}}至{{item.validEndTimeDesc}}</text>
+              <label>
+                  <checkbox class="radio" color='#fe4f4f' value="{{item.couponRecordId}}" checked="{{selectCopnId==item.couponRecordId}}"></checkbox>
+              </label>
+            </view>
+          </view>
+        </view>
+        </checkbox-group>
+        </block>
+        <block wx:else>
+        <view class='couponGetItem' wx:for="{{coupons.unavailable}}" wx:key="id" >
+          <view class="couponItemLf">
+            <view class="h4"><label>￥</label><text>{{item.useValue}}</text></view>
+            <view class="h6">满{{item.limitValue}}可用</view>
+          </view>
+          <view class="couponItemRh">
+            <view class='h4'>{{item.coupon.couponName}}</view>
+            <view class='text'>
+              <text>{{item.validBeginTimeDesc}}至{{item.validEndTimeDesc}}</text>
+            </view>
+          </view>
+          <view class="couponDisabledText">{{item.unavailableReason}}</view>
+        </view>
+        </block>
+      
+      
+    </view>
+    <view class="dialogDetailBtn"><button bind:tap="toConfirmCoupn">完成</button></view>
+  </view>
+</view>
+
+<!--支付方式结束-->
+<h-loadding />
+
+<h-dialog />

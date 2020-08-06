@@ -1,0 +1,37 @@
+ <wxs src="../../../../../xiaohei/wxs/common.wxs" module="com"/>
+ <view bind:tap="toPage" data-url="/goula/ohter/goods/detail/index?goodId={{data.id}}">
+ <l-card type="primary" l-title-class="title-card" 
+        l-class="card" l-img-class="right-card" 
+        image="{{com.imgpath(data.img)}}"
+        title="{{data.title}}" bind:>
+  <view class="content">
+    <view class="sales">月售 {{data.sale_number}} 件</view>
+    <view class="cardBottom">
+    <view>
+      <l-price unit="￥" value="{{data.price}}" autofix 
+        reserve-digit="2" 
+        unit-color="#FF3030"
+        value-color="#FF3030"
+        reserve-digit="2"
+        autofix
+        unit-size="22"></l-price>
+        <l-price unit="￥" value="{{data.discount_price}}" autofix 
+        reserve-digit="2" 
+        unit-color="#999"
+        value-color="#999"
+          autofix
+        deleted="{{data.discount_price>0}}"
+        del-color="#999"
+        unit-size="16"
+        size="20"
+        wx:if="{{data.discount_price}}"></l-price>
+    </view>
+    <view>
+        <view catch:tap="addCart" >
+            <l-icon size="40" name="add" color="red" />
+        </view>
+    </view>
+    </view>
+  </view>
+</l-card>
+</view>

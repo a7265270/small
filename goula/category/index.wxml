@@ -1,0 +1,51 @@
+
+<wxs src="../../xiaohei/wxs/common.wxs" module="com"/>
+<view class="mainContent" >
+<view class="top" bind:tap="toPage" data-url="/goula/ohter/goods/seatch/index">
+  <l-search-bar placeholder="搜索商品" shape="circle" show-cancel="{{false}}" disabled />
+</view>
+<l-segment  active-key="{{'c'+imagesTabs[tabActive].id}}" active-color="#d81e06" mystyle="{{style}}" l-badge-class="badgeClass" l-main="segment-main" l-content="right" scrollable bind:linchange="changeTabs" l-class-tabimage="tab-image" placement="left" has-line="{{true}}"  width="180" item-height="90" badge-max-count="99">
+        <l-segment-item wx:for="{{imagesTabs}}" tab="{{item.name}}" key="{{'c'+item.id}}" wx:key="key" image="{{item.image}}" pic-placement="top" badge-count="{{categoryC[item.id]}}"/>
+        <scroll-view class="scroller" slot="rightView" style="{{style}}" scroll-y scroll-into-view="{{activeKey}}" scroll-with-animation  > 
+        <!-- bindscroll="onScrollPage" -->
+      <!-- <block wx:for="{{imagesTabs}}" wx:key="index" > -->
+        <!-- <view id="{{'c'+item.id}}" class="h-anchor">{{item.name}}</view> -->
+        <block wx:for="{{imagesTabs[tabActive].list}}" wx:key="index" wx:for-index="itemIndex" wx:for-item="itemChild">
+        <view bind:tap="toPage" data-url="/goula/ohter/goods/detail/index?goodId={{itemChild.id}}">
+            <l-card type="primary" l-title-class="title-card" 
+                      l-class="card" l-img-class="right-card" 
+                      image="{{com.imgpath(itemChild.img)}}"
+                      title="{{itemChild.title}}" >
+                <view class="content">
+                  <view class="sales">月售 {{itemChild.sale_number}} 件</view>
+                  <view class="cardBottom">
+                      <view>
+                        <l-price unit="￥" value="{{itemChild.price}}" autofix 
+                          reserve-digit="2" 
+                          unit-color="#FF3030"
+                          value-color="#FF3030"
+                          unit-size="22"></l-price>
+                          <l-price unit="￥" value="{{itemChild.discount_price}}" autofix 
+                          reserve-digit="2" 
+                          unit-color="#999"
+                          value-color="#999"
+                          deleted="{{itemChild.discount_price>0}}"
+                          del-color="#999"
+                          unit-size="16"
+                          size="20"
+                          wx:if="{{itemChild.discount_price}}"></l-price>
+                      </view>
+                      <view catch:tap="addCart" data-record="{{itemChild}}" data-index="{{itemIndex}}">
+                              <l-icon size="40" name="add" color="red" />
+                      </view>
+                  </view>
+                     <view class="sales" wx:if="{{goodC[itemChild.id]>0}}" style="color:red;font-size:24rpx;">(已选 {{goodC[itemChild.id]}} 件)</view>
+                </view>
+              </l-card>
+              </view>
+              <!-- </block> -->
+              </block>
+        </scroll-view>
+</l-segment>
+
+</view>

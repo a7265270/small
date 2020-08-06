@@ -1,0 +1,12 @@
+
+/**app.wxss**/
+page{
+  height: 100%;
+  background-color: #f3f3f3;
+}
+
+
+checkbox{border:0;}
+checkbox .wx-checkbox-input{width:36rpx; height:36rpx; border-radius:100%;}/*checkbox 选项框大小 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {background:#d81e06; border:1px #d81e06 solid;}/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{width:28rpx; height:28rpx; line-height:28rpx; text-align:center; font-size:22rpx; color: #fff; background:transparent; transform:translate(-50%, -50%) scale(1); -webkit-transform:translate(-50%, -50%) scale(1);}

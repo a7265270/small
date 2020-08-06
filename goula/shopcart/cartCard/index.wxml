@@ -1,0 +1,39 @@
+  <wxs src="../../../xiaohei/wxs/common.wxs" module="com"/>
+  <l-card type="primary" 
+          full="{{true}}"
+          image="{{com.imgpath(data.goods_img)}}"
+          title="{{data.goods_title}}"
+          l-class="card"
+          l-img-class="right-card"
+          l-title-class="card-title"
+          >
+     <view class="content">
+      <view class="card-top">
+      </view>
+      <view class="card-bottom">
+        <l-price 
+          l-class="price" 
+          unit="￥"
+          value="{{data.goods_price}}"
+          unit-color="#fe4f4f"
+          value-color="#fe4f4f"
+          unit-size="28"
+          value-size="28"
+          value-bold
+          unit-bold
+          deleted="{{false}}"
+          reserve-digit="2"
+          autofix
+          />
+          <l-count-selector 
+          l-class="count" 
+          l-symbol-class="count"
+          l-count-class="countinput"
+          min="1" 
+          max="100"
+          count="{{data.quantity}}" 
+          bind:linout="onOut" 
+          bind:lintap="onA" />
+      </view>
+    </view>
+  </l-card>

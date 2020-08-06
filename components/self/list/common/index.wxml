@@ -1,0 +1,70 @@
+<scroll-view class="main" scroll-y scroll-with-animation enable-back-to-top scroll-anchoring refresher-enabled  enable-flex refresher-triggered="{{isRefresh}}" bindrefresherpulling="onPullRefreshing" bindrefresherrefresh="onPullRefresh" bindrefresherrestore="onRefreshed" bindrefresherabort="onRefreshAbort" bindscrolltolower="onAddData">
+
+<!-- tab栏 -->
+<l-segment bind:linchange="changeTabs" has-line  activeKey="{{active}}"  wx:if="{{tabList.length>0}}" active-color="#d81e06" animated-for-line>  
+	<l-segment-item  tab="{{item.title}}" key="{{index}}" slot="{{item.value}}" badge-count="{{item.num}}" wx:for="{{tabList}}" wx:key >
+	</l-segment-item>
+</l-segment>  
+<!-- tab栏 -->
+
+<slot name="toTop"/>
+  <l-sticky mode="css"  l-class="l-sticky">
+          <l-sticky-item top="1" l-body-class="l-sticky-item-body" l-class="l-sticky-item">
+						<!-- 顶部搜索框 -->
+						<view class="top" slot="header" wx:if="{{searchData}}">
+								<l-search bg-color="{{searchData.bgColor}}" placeholder="{{searchData.emptyText||''}}" shape="circle" type="{{searchData.type||'text'}}" value="{{searchData.value||''}}" maxlength="{{searchData.max||-1}}" bind:linconfirm="onSearch" bind:linclear="onClearSearch" show-cancel="{{false}}" />
+						</view>
+						<!-- 中间内容框 -->
+						<view class="{{list.length==0?'content':''}} h-content" slot="body">
+						<l-loadmore show="{{isloadding||(!hasMore&&list.length>0)}}" type="{{hasMore?'loading':'end'}}" end-text="{{page>1?'没有更多了~':''}}">
+							<view slot="content">
+							<checkbox-group bindchange="checkboxListChange">
+								<block wx:if="{{list.length>0}}">
+									<view class="h-list" >
+											<block wx:for="{{list}}" wx:key wx:for-item="listItem" wx:for-index="listIndex">
+											<view class="list-content">
+											<!-- 是否开启滑动操作 -->
+											<block wx:if="{{slideItems.length>0}}">
+												<l-slide-view height="240" width="750" slide-width="{{180*slideItems.length}}" disabled="{{slideItems.length==0}}" data-index="{{listIndex}}" bindslideopen="onSlideOpenTap" auto-close  close="{{!open[listIndex]}}" threshold="50">
+														<view slot="left" class="left item-left">
+														<!-- 列表前面的选择框 -->
+																<view wx:if="{{checkbox}}" class="check_list">
+																	<checkbox color='#d81e06' value="{{checkName?listItem[checkName]:listIndex}}" checked="{{listItem.checked}}" />
+																</view>	
+														<!-- 列表前面的选择框 -->
+																	<h-list-content class="list-item" data="{{listItem}}" otherData="{{otherData}}" index="{{listIndex}}" list="{{list}}" bind:myTap="toMyTap" bind:toLoad="_initData">
+																	</h-list-content>
+														</view>
+														<!-- 滑动操作 -->
+														<view slot="right" class="right">
+															<l-button l-class="slideButton" type="{{item.type}}" icon-size="{{item.iconSize}}" icon-color="{{item.iconColor}}" icon="{{item.icon}}" shape="square" wx:for="{{slideItems}}" wx:key bind:tap="slideTap" bgColor="{{item.bgColor}}" data-type="{{item.type}}" data-data="{{listItem}}">{{item.name}}</l-button>
+														</view>
+												</l-slide-view>
+											</block>
+												<block wx:else>
+														<h-list-content class="list-item" data="{{listItem}}" otherData="{{otherData}}" index="{{listIndex}}" list="{{list}}" bind:myTap="toMyTap" bind:toLoad="_initData" >
+														</h-list-content>
+											</block>
+												</view>
+											</block>
+										 <!-- </l-checkbox-group> -->
+									</view>
+								</block>
+							</checkbox-group>
+							</view>
+							</l-loadmore>
+							<view >
+								<block wx:if="{{!isloadding&&list.length==0&&!errData}}">
+									<!-- 描述：搜索无内容提示 -->
+									<l-status show bg-color="{{noData.bgColor||'#f3f3f3'}}" button-text="{{noData.buttonText}}" full-screen="{{false}}" image="{{noData.image}}" describe="{{noData.describe||''}}" type="{{noData.type}}" bind:lintap="onStatusButton"/>
+								</block>
+								<block wx:if="{{!isloadding&&list.length==0&&errData}}">
+								<!-- 错误内容 -->
+											<l-status show full-screen="{{false}}" bg-color="{{errData.bgColor||'#f3f3f3'}}" button-text="{{errData.buttonText}}" image="{{errData.image}}" describe="{{errData.describe}}" type="{{errData.type||'error'}}" bind:lintap="onErrorButton"/>
+								</block>
+							</view>
+						</view>
+          </l-sticky-item>
+	</l-sticky>
+
+</scroll-view>

@@ -1,0 +1,104 @@
+<wxs module="com" src="../../xiaohei/wxs/common.wxs" />
+<view class='user-container' >
+		<!--用户信息开始-->
+		<view class='userTop' >
+			<view class='userInfo'>
+				<view class='userInfoPic'>
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+				<view class='userInfoText' >
+					<view class='name'><open-data type="userNickName"></open-data></view>
+				</view>
+				<view class="notice" bind:tap="toPage" data-url="/subpackages/common/notice/main/index" hidden><icon class="notice-icon"></icon><text wx:if="{{msgNum>0}}">{{msgNum}}</text></view>
+			</view>
+	
+			<view class="userChartBox" hidden>
+				<view class='userTopChart'><text>会员信息</text><button bind:tap="toPage" data-url="/subpackages/common/wallet/recharge/index" wx:if="{{mall_recharge_btn_flag==1}}">去充值</button></view>
+				<view class='userChartNum'>
+					<view class="userTopChartItem" bind:tap="toPage" data-url="/subpackages/common/wallet/cash/main/index">
+						<view class="userTopChartItemNum"><text>￥</text><label>100</label></view>
+						<view class="userTopChartItemName"><text>会员积分</text><label class="icon-right"></label></view>
+					</view>
+					<view class="userTopChartItem" bind:tap="toPage" data-url="/subpackages/common/wallet/cash/main/index">
+						<view class="userTopChartItemNum"><text>￥</text><label>100</label></view>
+						<view class="userTopChartItemName"><text>账户余额</text><label class="icon-right"></label></view>
+					</view>
+					<view class="userTopChartItem" bind:tap="toPage" data-url="/subpackages/common/coupn/list/index">
+						<view class="userTopChartItemNum">2张</view>
+						<view class="userTopChartItemName"><text>优惠券</text><label class="icon-right"></label></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!--用户信息结束-->
+
+		<!--描述：订单状态开始-->
+		<view class='orderStatus'>
+    	<view class='userTopChart'>
+        <text>我的订单</text>
+        <!-- <text class="right_title" bind:tap="toPage" data-url="/goula/ohter/order/list/index">查看全部订单 ></text> -->
+      </view>
+			<view class='userOrder'>
+				<view class='userOrderItem' bind:tap="toPage" data-url="/goula/ohter/order/list/index?type=1">
+					<icon>
+						<image src="/images/goula/daifukuan.png" mode="widthFix"></image>
+					</icon>
+					<text>待付款</text>
+					<label wx:if="{{order.unpaidNumber>0}}">{{order.unpaidNumber}}</label>
+				</view>
+			
+				<view class='userOrderItem' bind:tap="toPage" data-url="/goula/ohter/order/list/index?type=20">
+					<icon>
+							<image src="/images/goula/daifahuo.png" mode="widthFix"></image>
+					</icon>
+					<text>待发货</text>
+						<label wx:if="{{order.deliveredNumber>0}}">{{order.deliveredNumber}}</label>
+				</view>
+				<view class='userOrderItem' bind:tap="toPage" data-url="/goula/ohter/order/list/index?type=30">
+					<icon>
+							<image src="/images/goula/daishouhuo.png" mode="widthFix"></image>
+					</icon>
+					<text>待收货</text>
+						<label wx:if="{{order.unappraiseNumber>0}}">{{order.unappraiseNumber}}</label>
+				</view>
+					<view class='userOrderItem' bind:tap="toPage" data-url="/goula/ohter/order/list/index?type=40">
+					<icon>
+							<image src="/images/goula/ziti.png" mode="widthFix"></image>
+					</icon>
+					<text>已完成</text>
+						<label wx:if="{{order.disputeNumber>0}}">{{order.disputeNumber}}</label>
+				</view>
+			</view>
+			<view class="userAllorder" bind:tap="toPage" data-url="/goula/ohter/order/list/index?type=30">
+					<icon>
+					<image src="/images/goula/tuikuan.png" mode="widthFix"></image>
+					</icon>
+					<text>全部订单</text>
+			</view>
+		</view>
+		<!--描述：订单状态结束-->
+
+		<!--导航入口开始-->
+		<view class='userNavWrap'>
+			<view class='userNavList' >
+				<view class='userNavItem' hover-class="user-link-item-hover">
+					<button open-type="contact" bindcontact="handleContact">
+						<view class="userNavItemTitle">
+							<icon><image src="/images/goula/kefu.png" mode="widthFix"></image></icon>
+							<text>联系客服</text>
+						</view>
+						<view class="userNavItemRh"><icon class='icon-right'></icon></view>
+					</button>
+				</view>
+				<view class='userNavItem' hover-class="user-link-item-hover" bind:tap="toPage" data-url="/subpackages/common/address/list/index">
+					<view class="userNavItemTitle">
+						<icon><image src="/images/goula/address.png" mode="widthFix"></image></icon>
+						<text>地址管理</text>
+					</view>
+					<view class="userNavItemRh"><icon class='icon-right'></icon></view>
+				</view>
+			</view>
+		</view>
+		<!--导航入口结束-->
+	</view>
+	<h-dialog />

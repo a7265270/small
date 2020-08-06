@@ -1,0 +1,121 @@
+{
+  "pages": [
+    "goula/home/index",
+    "pages/common/index/index",
+    "pages/index/index",
+    "pages/business/index/index",
+    "pages/common/content/index",
+    "pages/common/components/waterflow/index",
+    "pages/common/components/tabs/index",
+    "pages/common/components/segment/index",
+    "pages/business/components/categoryBuy/index",
+    "pages/business/components/list/index",
+    "pages/business/components/shopping/cart/index",
+    "pages/common/components/slideView/index",
+    "pages/common/components/confirm/index",
+    "pages/common/components/toast/index",
+    "goula/category/index",
+    "goula/shopcart/index",
+    "goula/user/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "购辣量贩食品工厂",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "subPackages": [
+    {
+      "name": "goula",
+      "root": "goula/ohter",
+      "pages": [
+        "common/search/index",
+        "goods/detail/index",
+        "goods/seatch/index",
+        "order/preview/index",
+        "address/list/index",
+        "address/edit/index",
+        "address/select/index",
+        "order/list/index",
+        "order/detail/index",
+        "store/detail/index"
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "goula/home/index",
+        "text": "首页",
+        "iconPath": "/images/goula/home.png",
+        "selectedIconPath": "/images/goula/home_active.png"
+      },
+      {
+        "pagePath": "goula/category/index",
+        "text": "全部商品",
+        "iconPath": "/images/goula/category.png",
+        "selectedIconPath": "/images/goula/category_active.png"
+      },
+      {
+        "pagePath": "goula/shopcart/index",
+        "text": "购物车",
+        "iconPath": "/images/goula/shop.png",
+        "selectedIconPath": "/images/goula/shop_active.png"
+      },
+      {
+        "pagePath": "goula/user/index",
+        "text": "我的",
+        "iconPath": "/images/goula/user.png",
+        "selectedIconPath": "/images/goula/user_active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "h-wx":"/components/self/button/wx/index",
+    "l-tag": "/miniprogram_npm/lin-ui/tag/index",
+    "l-card": "/miniprogram_npm/lin-ui/card/index",
+    "l-checkbox": "/miniprogram_npm/lin-ui/checkbox/index",
+    "l-checkbox-group": "/miniprogram_npm/lin-ui/checkbox-group/index",
+    "l-price": "/miniprogram_npm/lin-ui/price/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+    "l-counter": "/miniprogram_npm/lin-ui/counter/index",
+    "l-segment": "/components/self/segment/index",
+    "l-segment-item": "/components/self/segment-item/index",
+    "l-count-selector": "/miniprogram_npm/lin-ui/count-selector/index",
+    "l-status": "/miniprogram_npm/lin-ui/status-show/index",
+    "l-search": "/miniprogram_npm/lin-ui/search-bar/index",
+    "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index",
+    "l-sticky": "/miniprogram_npm/lin-ui/sticky/index",
+    "h-dialog": "/miniprogram_npm/lin-ui/dialog/index",
+    "l-toast": "/miniprogram_npm/lin-ui/toast/index",
+    "l-sticky-item": "/miniprogram_npm/lin-ui/sticky-item/index",
+    "l-slide-view": "/miniprogram_npm/lin-ui/slide-view/index",
+    "h-list": "/components/self/list/common/index",
+    "l-tabbar": "/miniprogram_npm/lin-ui/custom-tab-bar/index",
+    "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index",
+    "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
+    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index",
+    "l-capsule-bar": "/miniprogram_npm/lin-ui/capsule-bar/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位配送位置"
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

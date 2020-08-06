@@ -1,0 +1,6 @@
+
+<view catch:tap="onClick">
+    <slot></slot>
+</view>
+            
+            

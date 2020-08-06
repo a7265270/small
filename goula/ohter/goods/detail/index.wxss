@@ -1,0 +1,159 @@
+@import "../../../../icon.wxss";
+/*商品详情*/
+.goodDetailBack{position:fixed; z-index:999; left:24rpx; width:60rpx; height:60rpx; background:rgba(0, 0, 0, 0.1); border-radius:100%; text-align:center; line-height:60rpx; font-size:30rpx;}
+.goodDetail{padding-bottom:88rpx;}
+.good-swiper{height:750rpx;}
+.good-swiper .swiper{height:750rpx;}
+.good-swiper .swiper image{border-radius:0;}
+.goodDetailInfo{background:#fff; padding:0rpx; border-radius:0 0 10rpx 10rpx;}
+.purple{text-align:center; color:#fff; background: linear-gradient(to bottom, #e6c7fa, #9005e9, #9005e9 ,#9005e9); line-height:100rpx; font-size:40rpx;} 
+.blue{text-align:center; color:#fff; background: linear-gradient(to bottom, #d0d8ff, #153bfe, #153bfe ,#153bfe); line-height:100rpx; font-size:40rpx;} 
+
+
+.swiper image{height:100%; width:100%; border-radius:12rpx; display:block;}
+.goodDetailTitle{font-size:28rpx; font-weight:bold; padding:20rpx 24rpx;}
+.goodDetailInfoActivityCenter{margin-bottom:20rpx;}
+.goodDetailInfoActivity{background: linear-gradient(to right, #f52657,#fe4f4f); padding:4rpx 24rpx 10rpx 24rpx; display:flex; justify-content:space-between; align-items:center;}
+.goodsActivityRh{text-align:center;}
+.goodsActivityTitle{font-size:26rpx; color:#fff;}
+.goodsActivityTime{margin-top:2rpx; display:flex; align-items:center;}
+.goodsActivityTime text{color:#fe4f4f; min-width:36rpx; height:36rpx; line-height:36rpx; text-align:center; font-size:22rpx;  background:#fff; vertical-align:middle; border-radius:4rpx;}
+.goodsActivityTime label{color:#fff; vertical-align:middle; margin:0 4rpx; font-size:22rpx;}
+.goodsActivityLf{display:flex; align-items:center;}
+.goodsActivityMoney{margin-left:0;}
+.goodsActivityMoney .xj{display:flex; align-items: flex-end; color:#fff; font-size:26rpx;}
+.goodsActivityMoney .xj text{font-size:42rpx; font-weight:normal; position:relative;  bottom:-2rpx;}
+.goodsActivityMoney .xj .yj{color:#fff; opacity:0.7; margin-left:20rpx; text-decoration: line-through; font-size:24rpx;}
+.goodsActivityMoney .ys{font-size:26rpx; color:#fff;}
+.goodNumInfo{display:flex; justify-content:space-between; margin:0 24rpx 20rpx 24rpx;}
+.goodPrice text.red-text{font-size:34rpx; font-weight:bold; margin-right:14rpx; color:#fe4f4f;}
+.goodPrice label{color:#aaa; font-size:24rpx; text-decoration:line-through;}
+.goodsalesNum{font-size:24rpx; color:#999;}
+.market-price{text-decoration:line-through; color:#CDCDCD; padding:0px;}
+.goodDetailText{font-size:24rpx; color:#999; line-height:38rpx; padding:0 24rpx;}
+.goodDetailText text{display:none;}
+.goodDetailIntor{display:flex; padding:24rpx; justify-content:space-between; font-size:24rpx; align-items:center;}
+.goodDetailIntor .span{display:flex; align-items:center; color:#999; font-size:24rpx;}
+.goodDetailIntor .span text{color:#999; font-size:30rpx; padding-right:6rpx; position:relative; top:2rpx;}
+.goodReview{margin:20rpx 0; background:#fff; border-radius:10rpx;}
+.goodReviewTitle{padding:0 24rpx; border-bottom:1rpx #ddd solid; line-height:88rpx; display:flex; justify-content:space-between; align-items:center;}
+.goodReviewTitleLf{font-size:30rpx;}
+.goodReviewTitleRh{font-size:24rpx; color:#999;}
+.goodReviewList{background:#fff;}
+.goodReviewItem{padding:0 24rpx; }
+.goodReviewItem:last-child .goodReviewText{border:0;}
+.goodReviewInfo{display:flex; padding:20rpx 0 0 0; justify-content:space-between; align-items:center;}
+.goodReviewUser{display:flex; align-items:center; width:calc(100% - 250rpx);}
+.goodReviewUser icon{width:64rpx; height:64rpx; border-radius:32rpx; overflow:hidden;}
+.goodReviewUser icon image{width:64rpx; height:64rpx; display:block;}
+.goodReviewUser text{font-size:28rpx; width:calc(100% - 74rpx); margin-left:10rpx; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.goodReviewTime{font-size:22rpx; color:#999;}
+.goodReviewText{padding:0 0 20rpx 0; margin-left:74rpx; font-size:26rpx; color:#666; border-bottom:1rpx #ddd solid;}
+.noneReview{text-align:center; padding:48rpx 0; font-size:28rpx; color:#999; width: 100%;}
+.noneReviewText{padding:2px 0;}
+.goodsDescriptionTitle{background:#fff; border-radius:10rpx 10rpx 0 0; text-align:center; padding:20rpx 0;}
+.goodsDescriptionTitle text{display:block; font-weight:bold; font-size:30rpx;}
+.goodsDescriptionTitle label{font-size:20rpx; color:#999; display:block;}
+.noneReviewImg image{width:140rpx; display:block; margin:0 auto;}
+.goodsDescriptionImg view image{width:100%; display:block;}
+.goodDetailBot{display:flex; background:#41aefd; align-items:center; height:88rpx; box-shadow:0 0 20rpx rgba(0, 0, 0, 0.1); justify-content:space-between; position:fixed; bottom:0; left:0; right:0; background:#fff; z-index:999;}
+.goodDetailBtn{display:flex; width:calc(100% - 220rpx);}
+.goodDetailBtn navigator{flex:1;}
+.goodDetailBtn button{border:0; padding:0; display:flex; align-items:center; justify-content: center; line-height:88rpx; font-size:28rpx; color:#FFF; border-radius:0;}
+.goodDetailBtn button label{font-size:48rpx;}
+.goodDetailBtn button.roundBtn{position:absolute; box-shadow:0 -10rpx 24rpx rgba(0,0,0,0.1); line-height:150rpx; z-index:2; width:150rpx !important; height:150rpx; padding:10rpx; background:linear-gradient(to bottom, #9a8cff,#fff); color:#fff; border-radius:100%; left:50%; margin-left:-75rpx; bottom:0rpx;}
+.goodDetailBtn button.roundBtn text{display:block; line-height:130rpx; z-index:2; width:130rpx !important; height:130rpx; background:linear-gradient(to bottom, #7b69fe,#7b69fe); color:#fff; border-radius:100%; }
+
+.addShopcartBtn view{width:100% !important; line-height:88rpx !important; height:88rpx !important; font-size:28rpx; background:transparent;}
+.buyBtn{color:#fff; background:#7b69fe; flex:1;}
+.addShopcartBtn{color:#fff; background:#41aefd; flex:1;}
+.goodDetailMenu{display:flex; align-items:center; justify-content:center; width:220rpx;}
+.goodDetailMenuItem{flex:1; text-align:center;}
+.goodDetailMenuItem button{background:transparent; margin:0; padding:10rpx 0 8rpx 0; line-height:38rpx; width:120rpx !important;}
+.goodDetailMenuItem label{font-size:38rpx; display:block; margin:0 auto;}
+.goodDetailMenuItem text{display:block; text-align:center; font-size:22rpx; line-height:30rpx;}
+.shareUser{overflow:hidden;  margin-bottom:20rpx;}
+.shareUserInfor{float:left; background:rgba(254,78,78,0.6); padding:10rpx 16rpx; border-radius:75rpx;}
+.shareUserInfor icon{display:block; float:left;}
+.shareUserInfor icon image{width:48rpx; display:block; height:48rpx; border-radius:100%;}
+.shareUserInfor text{float:left; font-size:26rpx; display:block; margin-top:6rpx;  padding-left:10rpx; color:#fff;}
+.goodsShare{background:rgba(0,0,0,0.4); text-align:center; z-index:999; padding:10rpx 0rpx; position:fixed; right:0; top:48%; border-radius:20rpx 0 0 20rpx;}
+.goodsShare icon{display:block; margin:0 auto;}
+.goodsShare icon image{width:38rpx; margin:0 auto; display:block;}
+.goodsShare button{display:block; padding:0 20rpx; margin:0; line-height:28rpx; background:transparent; color:#fff; font-size:20rpx;}
+.storeCouponWrap{display:flex; align-items:center; justify-content:space-between; padding:20rpx; background:#fff; border-radius:10rpx; margin:20rpx 0;}
+.storeCouponText{font-size:28rpx;}
+.couponRight{color:#7b69fe; font-size:26rpx; line-height:64rpx;}
+.couponEntryList{width:calc(100% - 220rpx); display:flex;}
+.couponEntryLabel{border:1rpx #7b69fe solid; border-radius:4rpx; position:relative; margin-right:10rpx; font-size:24rpx; line-height:44rpx; color:#7b69fe;}
+.couponEntryLabel text{display:block; padding:0 24rpx; position:relative;}
+
+.common-dialog{position:fixed; left:0; right:0; bottom:-700rpx; top:0; z-index:999; opacity:0; pointer-events: none; -ms-transform: scale(1.185); transform: scale(1.185); backface-visibility: hidden; transition: all 0.3s ease-in-out 0s;}
+.common-dialog.show{pointer-events:auto; opacity:1.0; transition-duration: 0.3s; -ms-transform: scale(1); transform: scale(1); bottom:0;}
+.mask{position:fixed; top:0;left:0; z-index:999; width:100%; height:100%; overflow:hidden; background:rgba(0,0,0,0.6);}
+.dialog-good{display:flex; align-items:center; padding:24rpx;}
+.dialog-good-img{width:150rpx; height:150rpx; border-radius:10rpx; overflow:hidden;}
+.dialog-good-img image{width:150rpx; height:150rpx; display:block;}
+.dialog-good-info{width:calc(100% - 240rpx); margin-left:16rpx;}
+.dialog-good-info .title{font-size:28rpx; color:#000; margin-bottom:28rpx;}
+.dialog-good-info .price{font-size:28rpx; color:#fe4f4f; font-weight:bold;}
+.good-guige{padding:24rpx;}
+.good-guige-title{font-size:28rpx; line-height:56rpx; margin-bottom:10rpx;display: flex;flex-direction: row; justify-content: space-between;}
+.good-guige-item{font-size:0;}
+.good-guige-item view{background:#eee; margin-right:2%; margin-bottom:20rpx; font-size:26rpx; line-height:60rpx; width:calc(25% - 1.5%); text-align:center; border-radius:4rpx; display:inline-block;}
+.good-guige-item view.active{background:#7b69fe; color:#fff;}
+.good-guige-item view:nth-child(4n+0){margin-right:0;}
+.dialog-good-number{display:flex; justify-content:space-between; padding:24rpx; align-items:center; font-size:28rpx;}
+.dialog-good-number-input{display:flex; align-items:center;}
+.dialog-good-number-input input{width:120rpx; height:56rpx; text-align:center; font-size:28rpx;}
+.dialog-good-number-input button{background:#ddd; color:#fff; width:56rpx; height:56rpx; padding:0; text-align:center; line-height:56rpx; font-size:28rpx; border-radius:4rpx;}
+.detail-dialog-box{background:#fff; position:fixed; left:0; bottom:0;right:0; z-index:9999; border-radius:10rpx 10rpx 0 0;}
+.dialog-shop-btn{margin:0 24rpx 24rpx 24rpx; height:80rpx; line-height:60rpx; background:#7b69fe; outline:none; border:none; font-size:28rpx; color:#fff; border-radius:10rpx;}
+.close-position{position:absolute; top:15px; right:10px; background:url(http://blueriver.oss-cn-shenzhen.aliyuncs.com/img/closed.png); width:48rpx; height:48rpx; background-size:48rpx 48rpx;}
+
+.couponGetDialog{position:fixed; left:0; top:0; bottom:0; right:0; z-index:999; opacity:0; pointer-events:none;}
+.couponGetDialog.show{opacity:1.0; pointer-events:auto;}
+.couponGetDialog.show .mask{pointer-events:auto;}
+.couponGetDialog.show .couponGet{opacity: 1; bottom:0; transition-duration: 0.3s; -ms-transform: scale(1); transform: scale(1); pointer-events: auto;}
+.couponGet{position:fixed; z-index:999; left:0; bottom:-750rpx; right:0; background:#f9f9f9; -ms-transform: scale(1.185); transform: scale(1.185); border-radius:10rpx 10rpx 0 0; overflow:hidden; backface-visibility: hidden; pointer-events: none; transition: all 0.3s ease-in-out 0s;}
+.couponGetTitle{position:relative; padding-left:24rpx; font-size:32rpx; line-height:80rpx; background:#fff;}
+.couponGetTitle icon{position:absolute; right:24rpx; top:0; font-size:38rpx; color:#999;}
+.getCouponTab{background:#fff; height:88rpx; line-height:80rpx; display:flex;}
+.getCouponTabItem{flex:1; position:relative; text-align:center; font-size:26rpx; color:#666;}
+.getCouponTabItem.active{color:#000; font-weight:bold;}
+.getCouponTabItem.active::after{content:""; position:absolute; height:4rpx; background:linear-gradient(to right, #fff,#b622ff); width:56rpx; left:50%; margin-left:-28rpx; bottom:16rpx;}
+.couponGetList{height:750rpx; overflow:auto; -webkit-overflow-scrolling:touch;}
+.couponGetItem{background:#fff; display:flex; flex-wrap: wrap; border-radius:10rpx; overflow:hidden; box-shadow:0 0 20rpx rgba(0,0,0,0.04); margin:24rpx 24rpx 0rpx 24rpx;}
+.tabs-container .couponGetItem{margin:4rpx 24rpx 24rpx 24rpx;}
+.couponItemLf{background:-webkit-linear-gradient(top left, #21d4fd, #b721ff); border-right:1px #fff dashed; width:180rpx; padding:24rpx 0; color:#fff; text-align:center; position:relative;}
+.couponItemLf:before{content:""; position:absolute; width:20rpx; height:20rpx; background:#fff; border-radius:100%; right:-10rpx; top:-10rpx;}
+.couponItemLf:after{content:""; position:absolute; width:20rpx; height:20rpx; background:#fff; border-radius:100%; right:-10rpx; bottom:-10rpx;}
+.couponItemLf .h4{display:flex; font-size:24rpx; justify-content:center; align-items:flex-end;}
+.couponItemLf .h4 text{font-size:48rpx; position:relative; bottom:-4rpx;}
+.couponItemLf .h6{font-size:24rpx; padding-top:14rpx;}
+.couponItemRh{width:calc(100% - 180rpx); padding:20rpx; position:relative;}
+.couponItemRh .h4{font-size:26rpx; font-weight:bold; height:80rpx;}
+.couponItemRh .text{color:#999; font-size:22rpx; display:flex; justify-content:space-between; align-items:flex-end;}
+.couponItemRh .text .radio{margin-right:-10rpx;}
+.couponItemRh .text button{border:0; background:#fe4f4f; color:#fff; line-height:48rpx; border-radius:40rpx; font-size:24rpx; height:48rpx; padding:0 10rpx; width:120rpx; margin:0;}
+.couponGetItem.invalid .couponItemLf{background:-webkit-linear-gradient(top left, #ddd, #bbb); color:#f2f2f2;}
+.couponGetItem.invalid .couponItemRh{opacity:0.8;}
+.couponGetItem.invalid .couponItemRh .h4{color:#999;}
+.couponDisabledText{padding:18rpx 20rpx; color:#666; position:relative; z-index:9; font-size:24rpx; background:#fff; box-shadow:0 -2rpx 20rpx rgba(0,0,0,0.05); width:100%;}
+.couponGq{position:absolute; right:-20rpx; top:-20rpx; z-index:9; opacity:0.5;}
+.couponGq image{width:100rpx; display:block;}
+.couponList .couponItemLf:before{content:""; position:absolute; width:20rpx; height:20rpx; background:#f8f8f8; border-radius:100%; right:-10rpx; top:-10rpx;}
+.couponList .couponItemLf:after{content:""; position:absolute; width:20rpx; height:20rpx; background:#f8f8f8; border-radius:100%; right:-10rpx; bottom:-10rpx;}
+
+.goodShareHint-wrap{background:#fff; position:absolute; bottom:0; width:100%; left:0; z-index:999;}
+.goodShareHint{display:flex; display:-webkit-flex; padding:36rpx 24rpx;}
+.goodShareHint-item{flex:1; font-size:26rpx; line-height:48rpx; text-align:center;}
+.goodShareHint-item button{line-height:100rpx; padding:0; text-align:center; width:100rpx; height:100rpx; border-radius:100%;}
+.goodShareHint-item text{display:block; padding-top:10rpx;}
+.goodShareHint-item button.orange{background:#fa9c15;}
+.goodShareHint-item button.green{background:#10b62e;}
+.goodShareHint-item button.blue{background:#41acf9;}
+.goodShareHint-item button text{font-size:64rpx; color:#fff; padding:0;}
+.goodShareHint-title{background:#f5f5f5; overflow:hidden; padding:14rpx 24rpx; font-size:28rpx;}
+.goodShareHint-title text{float:left; line-height:64rpx;}
+.goodShareHint-title view{float:right; font-size:48rpx; color:#999;}

@@ -1,0 +1,80 @@
+page{
+  background-color: #fff;
+  height: 100%;
+}
+.scroller{
+  background-color: #fff;
+}
+.h-anchor{
+  font-weight: bold;
+  font-size:30rpx;
+  padding: 20rpx;
+  border-top: 1px solid #eee;
+}
+.mainContent{
+  height:100%;
+  
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.top{
+  padding-bottom:30rpx;
+}
+
+.segment-main{
+  display: flex;
+  
+}
+.card {
+  margin: 10rpx auto !important;
+}
+
+.right-card {
+  height: 180rpx !important;
+  width: 180rpx !important;
+  border-radius: 12rpx !important;
+}
+.right{
+  width:100%;
+  height: 100%;
+  background-color: rgb(228, 226, 226);
+}
+.content {
+  margin-top: 10rpx;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.title-card{
+  font-size:28rpx !important;
+  font-weight: bold;
+}
+.cardBottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.segment-view .segment-active {
+  background: #f4516c;
+  color: #fff !important;
+}
+
+.tab-image {
+  width: 44rpx !important;
+  height: 44rpx !important;
+}
+
+.icon-style {
+  margin-right: 10rpx;
+}

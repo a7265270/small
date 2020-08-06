@@ -1,0 +1,9 @@
+.cart-list{
+  padding:0 !important;
+}
+.shopcartFooter{position:fixed; z-index:999; border-top:1rpx #ddd solid;  padding:0rpx 0 0 24rpx; display:flex; align-items:center; justify-content:space-between; bottom:0rpx; background:#fff; left:0; right:0;}
+.checkedAll{font-size:26rpx; color:#333; display:flex; align-items:center;}
+.checkedAll text{padding-left:10rpx;}
+.shopcartEdit{color:#fff; width:200rpx; line-height:56rpx; font-size:26rpx;}
+.shopcartTitle{width:calc(100% - 200rpx); text-align:center; font-size:32rpx; font-weight:bold; color:#fff; line-height:56rpx;}
+.shopcartMoney{color:#d81e06;font-size: 30rpx;}

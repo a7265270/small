@@ -1,0 +1,32 @@
+<h-list generic:h-list-content="carts" 
+			h-content="cart-list"
+			otherData="{{selectCart}}"
+			searchData="{{searchData}}" 
+			pageData="{{pageData}}" 
+			loadData="{{loadData}}" 
+			noData="{{noData}}" 
+			slideItems="{{slideItems}}"
+			bind:toMore="onAfter" 
+			checkbox="{{checkbox}}" 
+			checkAll="{{checkAll}}"  
+			bind:checkboxChange="onCheckBox" 
+			bind:toLoad="toLoad" 
+			bind:slideTap="slideTap"
+			bind:myTap="toUpdateNum"/>
+			
+	<view class="shopcartFooter" >
+		<view class="checkedAll">
+			<checkbox-group bindchange="checkboxChange">
+				<label class="checkbox">
+					<checkbox color='#fe4f4f' value="all" checked="{{selectAll}}" /></label>
+			</checkbox-group>
+			<text>全选</text>
+		</view>
+		<view class="shopcartMoney" wx:if="{{selectCart}}">
+			<label>合计:</label><text>￥{{totalPrice}}</text>
+		</view>
+		<view class="shopcartBlance">
+			<button wx:if="{{edit}}" bind:tap="toDelete">移除</button>
+			<button wx:else bind:tap="toFinsh">去结算</button>
+		</view>
+	</view>

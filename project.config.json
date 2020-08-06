@@ -1,0 +1,241 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"enhance": true,
+		"nodeModules": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.12.0",
+	"appid": "wx0463a9bd5dad820b",
+	"projectname": "%E9%9B%B6%E9%A3%9F%E5%BA%97github",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "瀑布流",
+					"pathName": "pages/common/components/waterflow/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tabs标签",
+					"pathName": "pages/common/components/tabs/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "零售专题",
+					"pathName": "pages/common/content/index",
+					"query": "title=零售专题&navigatemark=retail",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类购买",
+					"pathName": "pages/business/components/categoryBuy/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业务组件",
+					"pathName": "pages/business/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "普通列表",
+					"pathName": "pages/business/components/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/business/components/shopping/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索列表",
+					"pathName": "goula/ohter/common/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "goula/shopcart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "goula/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类商品",
+					"pathName": "goula/ohter/goods/seatch/index",
+					"query": "type=new",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情页",
+					"pathName": "goula/ohter/goods/detail/index",
+					"query": "goodId=42",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认界面",
+					"pathName": "goula/ohter/order/preview/index",
+					"query": "goodId=42&goodNum=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的地址",
+					"pathName": "goula/ohter/address/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "goula/ohter/address/edit/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改地址",
+					"pathName": "goula/ohter/address/edit/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goula/ohter/order/preview/index",
+					"pathName": "goula/ohter/order/preview/index",
+					"query": "goodId=47&goodNum=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "goula/ohter/order/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "订单xiang'qing ",
+					"pathName": "goula/ohter/order/detail/index",
+					"query": "orderId=202007212229135737",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "goula/category/index",
+					"query": "orderId=202007212229135737",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "goula/shopcart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车结算",
+					"pathName": "goula/ohter/order/preview/index",
+					"query": "type=cart&ids=9,15,16,17,18,19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索界面",
+					"pathName": "goula/ohter/common/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店详情",
+					"pathName": "goula/ohter/store/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店详情",
+					"pathName": "goula/ohter/store/detail/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

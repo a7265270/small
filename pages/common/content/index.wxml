@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="section">
+    <view class='navi-title'>
+  <view class="title-left">
+    <view class="line"></view>
+    <text class="title-left-text">{{title}}</text>
+  </view>
+  <view class="count">
+    <text >{{config.length}}</text>
+  </view>
+</view>
+
+    
+    <view class="section-content">
+    <!--components/detail-navi-card/index.wxml-->
+      <navigator url="{{config.componentsPath}}" wx:for="{{config}}"
+        wx:for-item="config"
+        wx:key="index">
+        <view class="detail-navi">
+          <view class="detail-left">
+            <image src="{{config.icon}}" class="detail-icon" />
+            <view class="detail-content">
+              <text class="detail-navi-name"> {{config.title}}</text>
+              <text class="detail-navi-desc"> {{config.desc}}</text>
+            </view>
+          </view>
+          <image class="navi-button" src="/images/right-arrow.png" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "list":"/components/self/list/common/index",
+    "card":"./listComponents/index"
+
+  }
+}

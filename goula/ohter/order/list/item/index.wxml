@@ -1,0 +1,39 @@
+ <wxs module="com" src="../../../../../xiaohei/wxs/common.wxs" />
+ <view class='orderAll'>
+ 	<view class="orderState">
+ 		<text>订单编号：{{data.order_no}}<button catch:tap="toCopy" data-value="{{data.order_no}}">复制</button></text>
+ 		<text class="order-list-state">{{data.status_detail}}</text>
+ 	</view>
+ 	<view class="orderList">
+ 		<view class="goodGroup" wx:for="{{data.items}}" wx:key catchtap="toPage" data-url="/goula/ohter/goods/detail/index?goodId={{item.good_id}}" wx:if="{{index<3}}">
+ 			<view class="goodGroupImg">
+ 				<image mode='aspectFill' src="{{com.imgpath(item.good_img)}}"></image>
+ 			</view>
+ 			<view class="goodGroupRh">
+ 				<view class='h4'>{{item.good_name}}</view>
+ 				<!-- <view class='p'><text>规格：{{item.skuName}}</text></view> -->
+ 				<view class="goodsettlementBot">
+ 					<view class='goodGroupPrice'><label>￥</label><text>{{item.price}}</text></view>
+ 					<view class="shopcartNumber">
+ 						<text>×{{item.total}}</text>
+ 					</view>
+ 				</view>
+ 			</view>
+ 		</view>
+ 	</view>
+	<view wx:if="{{data.items.length>2}}" class="tooltip">更多商品信息请进入详情查看</view>
+ 	<view class="orderListBottom">
+ 		<view class="orderListAll">
+ 			<view class="orderTime">{{data.create_time}}</view>
+ 			<view class="orderListNum">
+ 				<label>共{{data.total_count}}件商品</label><text>￥{{data.final_total_price}}</text>
+ 			</view>
+ 		</view>
+ 		<view class="orderBottomBtn">
+ 			<button class="order-btn-gray" bind:tap="toPage" data-url="/goula/ohter/order/detail/index?orderId={{data.order_no}}">订单详情</button>
+      <button class="order-btn-gray" bind:tap="doActive" data-type="cancel" wx:if="{{data.status=='1'}}">取消订单</button>
+    	<button class="order-btn-org" bind:tap="doActive" data-type="pay" wx:if="{{data.status=='1'}}">立即支付</button>
+      <button class="order-btn-org" bind:tap="doActive" data-type="commit" wx:if="{{data.status=='20'}}">确认收货</button>  
+ 		</view>
+ 	</view>
+ </view>

@@ -1,0 +1,43 @@
+<wxs src="../../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"/>
+<wxs src="../../../xiaohei/wxs/common.wxs" module="com"/>
+
+  <content-card l-content="content" name="{{title}}" bind:toMore="toPage" data-url="/goula/ohter/goods/seatch/index?type={{listType}}">
+     <view class="container l-class">
+    <scroll-view scroll-x class="scroll-view">
+        <view class="inner">
+            <block wx:for="{{spuList}}" wx:key="{{index}}">
+                <view class="spu-container" bind:tap="toPage" data-url="/goula/ohter/goods/detail/index?goodId={{item.id}}">
+                    <image class="spu-img" src="{{com.imgpath(item.img)}}"></image>
+                    <text class="spu-text">{{item.title.length>=8?s.substring(item.title,0,7)+'...':item.title}}</text>
+                    <view class="goods-bottom">
+                    <view>
+                     <l-price
+                              l-value-class="price-value"
+                              l-unit-class="price-unit"
+                              value="{{item.discount_price}}">
+                      </l-price>
+                      <l-price
+                              l-value-class="{{item.discount_price>0?'del-price-value':'price-value'}} "
+                              value-size="{{item.discount_price>0?24:28}}"
+                              l-unit-class="{{item.discount_price>0?'del-price-unit':'price-unit'}}"
+                              value="{{item.price}}"
+                              deleted="{{item.discount_price>0}}"
+                              del-color="#999"
+                              >
+                      </l-price>
+                     
+                      </view>
+                       <l-button special="true" catch:lintap="addCart" data-record="{{item}}">
+                          <l-icon size="30" name="add" color="red" />
+                      </l-button>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+</content-card>
+
+
+
+
